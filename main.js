@@ -1,5 +1,8 @@
 leftWristx = 0;
 leftWristy = 0;
+leftWristscore=0;
+song1_status="";
+song2_status="";
 
 rightWristx= 0;
 rightWristy= 0;
@@ -24,9 +27,17 @@ function preload()
     song = loadSound("music2.mp3");
 }
 
-
-function draw(){
+function draw() {
     image(video, 0, 0, 600, 500);
+    if (leftWristScore > 0.2) {
+        circle(leftWristx, leftrightWristy, 20);
+        fill("#FF0000");
+        stroke("#FF0000");
+    }
+    if (song1_status="false") {
+       play("music.mp3");
+       document.getElementById("heading").innerHTML="Song 1";
+    }
 }
 
 
