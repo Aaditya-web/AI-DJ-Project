@@ -28,15 +28,36 @@ function preload()
 }
 
 function draw() {
-    image(video, 0, 0, 600, 500);
+    image(video, 600, 500, 600, 500);
     if (leftWristScore > 0.2) {
         circle(leftWristx, leftrightWristy, 20);
         fill("#FF0000");
         stroke("#FF0000");
+        if (song2_status="true")
+        {
+            wait(10);
+            stop("music2.mp3");
+            set(song1_status=false); 
+        }
     }
-    if (song1_status="false") {
+    if (song1_status=false) {
        play("music.mp3");
-       document.getElementById("heading").innerHTML="Song 1";
+       document.getElementById("song_playing").innerHTML="Now Playing: Song 1";
+    }
+
+    if (rightWristScore > 0.2) {
+        circle(rightWristx, rightrightWristy, 20);
+        fill("#FF0000");
+        stroke("#FF0000");
+        if (song1_status="true")
+        {
+            wait(10);
+            stop("music.mp3");
+        }
+    }
+    if (song2_status=false) {
+       play("music2.mp3");
+       document.getElementById("song_playing").innerHTML="Now Playing: Song 2";
     }
 }
 
